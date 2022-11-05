@@ -13,14 +13,14 @@ date: "2021-05-04T10:53:12.000Z"
 ## Create a VM
 
 Firstly, we need to create a basic VM. Though since we're going to be using the Github Enterprise Server QCOW2 image we won't need to specify any boot media. Thus the options should look something like this.
-![VM OS options](/blog/ghe-pve/VMOS.png)
+![VM OS options](/assets/posts/ghe-pve/VMOS.png)
 
 In the `Hard Disk` section we will be asked to configure a `Disk size` but that doesn't really matter since we will be discarding it later on.
 
 ### Removing the current disk
 This step comes in 2 parts:
-* Detaching the default disk ![Detaching the disk](/blog/ghe-pve/VMDetachDisk.png)
-* Deleting the detached disk ![Deleting the detached disk](/blog/ghe-pve/VMDeleteDisk.png)
+* Detaching the default disk ![Detaching the disk](/assets/posts/ghe-pve/VMDetachDisk.png)
+* Deleting the detached disk ![Deleting the detached disk](/assets/posts/ghe-pve/VMDeleteDisk.png)
 
 #### Note
 The `Hardware` settings shown in the above pictures were created at the base value that Proxmox imports and are not suitable for a working Github Enterprise Server installation.
@@ -44,7 +44,7 @@ qm importdisk $VM_ID ghes.qcow2 $STORAGE_NAME
 ```
 
 Once the import has finished we need to attach the disk in the `Hardware` tab of the VM.
-![Openning the disk edit menu](/blog/ghe-pve/VMEditGHESDisk.png)
+![Openning the disk edit menu](/assets/posts/ghe-pve/VMEditGHESDisk.png)
 Once we're in the menu we just need to press `Add`. Though you can also edit any of the other disk settings if need be.
 
 ## Creating the 2nd disk
@@ -53,7 +53,7 @@ Now since we need some storage other than what the image allocates we will creat
 The minimum requirements (we need the `Attached storage` value) can be found [here](https://docs.github.com/en/enterprise-server/admin/installation/installing-github-enterprise-server-on-openstack-kvm#minimum-requirements).
 
 For this post I will be using the `Trial, demo, or 10 light users` requirements.
-![Attached storage disk](/blog/ghe-pve/VMCreateAttachedStorageDisk.png)
+![Attached storage disk](/assets/posts/ghe-pve/VMCreateAttachedStorageDisk.png)
 
 <hr />
 
