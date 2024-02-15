@@ -2,7 +2,7 @@
 layout: post
 title: "Pop3 Reference"
 excerpt: "Why use POP3 when there's IMAP?"
-date: "2043-04-20T10:53:12.000Z"
+date: "2023-04-20T10:53:12.000Z"
 ---
 
 # Post Office Protocol - Version 3 (POP3)
